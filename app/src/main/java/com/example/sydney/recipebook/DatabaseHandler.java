@@ -37,7 +37,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String KEY_INGREDIENTS = "Ingredients";
     public static final String KEY_QUANTITY = "Quantity";
     public static final String KEY_INSTRUCTIONS = "Instrutions";
-    public static final String KEY__RECIPE_NAME = "recipe_name";
+    public static final String KEY_RECIPE_NAME = "recipe_name";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -52,7 +52,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         String CREATE_INGREDIENTS_TABLE = "CREATE TABLE " + TABLE_INGREDIENTS + " (" + KEY_INGR_ID +
                 " INTEGER PRIMARY KEY AUTOINCREMENT, " +  KEY_INGREDIENTS + " TEXT, " + KEY_QUANTITY +
-                " TEXT, " + KEY_INSTRUCTIONS + " TEXT, " + KEY__RECIPE_NAME + " TEXT) ";
+                " TEXT, " + KEY_INSTRUCTIONS + " TEXT, " + KEY_RECIPE_NAME + " TEXT) ";
         db.execSQL(CREATE_INGREDIENTS_TABLE);
     }
 
@@ -84,8 +84,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_RECIPES, new String[] {KEY_ID, KEY_NAME, KEY_DESCRIPTION,
-                KEY_PREP_TIME_MINUTES, KEY_NUM_SERVINGS}, KEY_NAME + "=?", null, name, null, null,
-                null);
+                KEY_PREP_TIME_MINUTES, KEY_NUM_SERVINGS}, KEY_NAME + "=?", new String[]
+                        {String.valueOf(name)}, null, null, null, null);
         if(cursor != null) {
             cursor.moveToFirst();
         }
@@ -150,6 +150,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         });
         db.close();
     }
+    //empty table of recipes
     public void emptyRecipes() {
         SQLiteDatabase db = this.getWritableDatabase();
         String CLEAR_TABLE_RECIPE = "DELETE FROM recipes";
@@ -166,7 +167,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_INGREDIENTS, ingredient.getIngredients());
         values.put(KEY_QUANTITY, ingredient.getQuantity());
         values.put(KEY_INSTRUCTIONS, ingredient.getInstructions());
-        values.put(KEY__RECIPE_NAME, ingredient.getRecipe_name());
+        values.put(KEY_RECIPE_NAME, ingredient.getRecipe_name());
 
         db.insert(TABLE_INGREDIENTS, null, values);
         db.close();
@@ -177,8 +178,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_INGREDIENTS, new String[] {KEY_INGR_ID, KEY_INGREDIENTS, KEY_QUANTITY,
-                        KEY_INSTRUCTIONS, KEY__RECIPE_NAME}, KEY_INGREDIENTS + "=?", null, name, null, null,
-                        null);
+                        KEY_INSTRUCTIONS, KEY_RECIPE_NAME}, KEY_INGREDIENTS + "=?", new String[]
+                        {String.valueOf(name)}, null, null, null, null);
+
         if(cursor != null) {
             cursor.moveToFirst();
         }
@@ -228,7 +230,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_INGREDIENTS, ingredient.getIngredients());
         values.put(KEY_QUANTITY, ingredient.getQuantity());
         values.put(KEY_INSTRUCTIONS, ingredient.getInstructions());
-        values.put(KEY__RECIPE_NAME, ingredient.getRecipe_name());
+        values.put(KEY_RECIPE_NAME, ingredient.getRecipe_name());
 
         return db.update(TABLE_INGREDIENTS, values, KEY_INGR_ID + " = ? ", new String[] {
                 String.valueOf(ingredient.getIngredient_id())
@@ -243,12 +245,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         });
         db.close();
     }
+    //empty table of recipes
     public void emptyIngredients() {
         SQLiteDatabase db = this.getWritableDatabase();
         String CLEAR_TABLE_INGREDIENTS = "DELETE FROM ingredients";
         db.execSQL(CLEAR_TABLE_INGREDIENTS);
         db.execSQL("VACUUM");
     }
+    //get ingridents for specified recipe
+    public List<Ingredients> getRecipeIngredients(String recipeName) {
+        List<Ingredients> ingredientList = new ArrayList<Ingredients>();
 
+        String selectQuery = "SELECT * FROM " + TABLE_INGREDIENTS + " WHERE " + KEY_RECIPE_NAME + " =" + recipeName;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                Ingredients ingredient = new Ingredients();
+                ingredient.setIngredient_id(Integer.parseInt(cursor.getString(0)));
+                ingredient.setIngredients(cursor.getString(1));
+                ingredient.setQuantity(cursor.getString(2));
+                ingredient.setInstructions(cursor.getString(3));
+                ingredient.setRecipe_name(cursor.getString(4));
+                ingredientList.add(ingredient);
+            } while (cursor.moveToNext());
+        }
+        return ingredientList;
+    }
 
 }

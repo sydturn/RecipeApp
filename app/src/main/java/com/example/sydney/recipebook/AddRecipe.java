@@ -22,12 +22,12 @@ public class AddRecipe extends AppCompatActivity {
     String ingredientTxt;
     String quantityTxt;
     String stepTxt;
-    DatabaseHandler db = new DatabaseHandler(this);
+    DatabaseHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        db =  new DatabaseHandler(this);
         //gather all the widgets up
         //BUTTONS:
         final Button btnSubmitIngredient = (Button) findViewById(R.id.btnAddIngredient);
@@ -279,6 +279,7 @@ public class AddRecipe extends AppCompatActivity {
                     String log = "The ingredient: " + ing.getIngredients() + " is associated with recipe: " + ing.getRecipe_name();
                     Log.d("Ingredient: ", log);
                 }
+                db.close();
                 startActivity(new Intent(AddRecipe.this, ViewRecipes.class));
             }
         });
