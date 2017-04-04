@@ -280,7 +280,7 @@ public class AddRecipe extends AppCompatActivity {
                     Log.d("Ingredient: ", log);
                 }
                 db.close();
-                startActivity(new Intent(AddRecipe.this, ViewRecipes.class));
+                startActivity(new Intent(AddRecipe.this, RecipeView.class));
             }
         });
 
