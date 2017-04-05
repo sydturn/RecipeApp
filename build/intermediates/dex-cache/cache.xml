@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\701b863dd3618ecf64c5e88d47c3d30964b7e2a4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a952542b11e0d47c22500d87461635e5e73a91bd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\e82f59527ca4eb5426eeec11cbdb9f036de405be\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3d2d1cbb3e2dd4c8e09fccd6802a476e53e3aeb0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\f2e2a9b1b7202e199ae735837bd9dc0b9f58979c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6a3dd2686d70482f444a99884cc5b0171a733d46\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\94537b0b770d64aa52b0b4a25674a69f9cffebe4\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2f15817df950cb58d27798b528a75d64ccc58a5c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\f1591fd39099f7be01f122d4d27227b49b292877\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7dfb27db6c3a2f082855e331fe6257404c95cf4d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1942e2f037c0739496bd0ea2bd636f680edb4754">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7cf8cf57db5055cddf32c6c06c19e6dffd479501\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\8f152c1e254ad339dc6e42efc87700ef3ea31033\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_56e60abe2a906568c8aae5fe2562e149a03b7bc6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_bb6f09d43ac990ca9bb329196007a8a62e5dad94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\be142d38bd491a4f3ffad62b75588004e938ce7b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0a0ea390c52464617410b8109fa1876d990c9683\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\19a4ec0b54ffc412f5cc12f0ddd559acaaf8d83f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7d9daa18601698fa3d5d45dc9e05fcb6d68aed94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\94584554f028dcc44bf3383db0c0b3b9f9a52741\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3aced179c9a5b27dd7322226a279be930997955f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_537ceaa1f4d0cf1c9802810dec2e3f97c9e6ebc1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\85b277bd94c5a524c0405a05a6f9e93853fe63e3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a15ec052386ae464d34c0a84763ca3f9be0dd559\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\8870fa89ca7e1c52f84e4d8e330c4f5b8c9eccf8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_64d9d5c0828c27c5916f6391b6875eb629de5524\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Sydney\.android\build-cache\2cf3ed1a8eafde73215a2b82a4b1b67019f167c3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Sydney\AndroidStudioProjects\RecipeApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_23f1e5f6f58c2a3c10f853d904ab00ddaf67ab8e\classes.dex" />
+    </item>
+
+</items>

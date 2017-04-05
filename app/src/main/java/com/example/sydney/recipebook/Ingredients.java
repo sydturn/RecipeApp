@@ -61,6 +61,7 @@ public class Ingredients {
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
+
     public String getRecipe_name() {
         return recipe_name;
     }

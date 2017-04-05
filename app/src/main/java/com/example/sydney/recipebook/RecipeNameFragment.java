@@ -1,21 +1,12 @@
 package com.example.sydney.recipebook;
 
 import android.app.ListFragment;
-import android.graphics.Point;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.v4.widget.SlidingPaneLayout;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +19,9 @@ public class RecipeNameFragment extends ListFragment {
 
     public static String[] recipeNamesArray;
     DatabaseHandler db;
+//    Recipes currentSelection;
+//    Button btnMake = (Button) getView().findViewById(R.id.btnMake);
+//    Button btnDelete = (Button) getView().findViewById(R.id.btnDelete);
     public RecipeNameFragment() {
         // Required empty public constructor
     }
@@ -44,10 +38,8 @@ public class RecipeNameFragment extends ListFragment {
         super.onActivityCreated(savedState);
 
         db =  new DatabaseHandler(getActivity());
-
-
         List<Recipes> recipes = db.getAllRecipes();
-        List<String> recipeNames = new ArrayList<>();
+        final List<String> recipeNames = new ArrayList<>();
 
         for(Recipes rp : recipes) {
             recipeNames.add(rp.getName());
@@ -63,6 +55,42 @@ public class RecipeNameFragment extends ListFragment {
                 recipeNamesArray);
         setListAdapter(adapter);
 
+//        btnDelete.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                db.deleteRecipe(currentSelection);
+//                recipeNames.remove(currentSelection.getName());
+//                boolean found = false;
+//                for(int i = 0; i < recipeNamesArray.length; i++) {
+//                    if(recipeNamesArray[i].equals(currentSelection.getName())) {
+//                        found = true;
+//                        recipeNamesArray[i] = null;
+//                    }
+//                }
+//                if(found) {
+//                    int counter = 0;
+//                    String[] temp = new String[recipeNamesArray.length - 1];
+//                    for (int i = 0; i < recipeNamesArray.length; i++) {
+//                        if(recipeNamesArray[i] != null) {
+//                            temp[counter] = recipeNamesArray[i];
+//                            counter++;
+//                        }
+//                    }
+//                    recipeNamesArray = new String[temp.length];
+//                    for(int j = 0; j < temp.length; j++) {
+//                        recipeNamesArray[j] = temp[j];
+//                    }
+//                }
+//                else {
+//                    Toast.makeText(getActivity(), "Select something to delete!", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
+//        btnMake.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//            }
+//        });
+
     }
 
     // Called when the user selects an item from the List
@@ -72,6 +100,7 @@ public class RecipeNameFragment extends ListFragment {
         RecipeDescriptionFragment mDescriptionsFragment = (RecipeDescriptionFragment) getFragmentManager()
                 .findFragmentById(R.id.descriptions);
         mDescriptionsFragment.showDescriptionAtIndex(pos);
+        //currentSelection = recipes.get(pos);
 
     }
 }
