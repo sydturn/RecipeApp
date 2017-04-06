@@ -1,16 +1,14 @@
 package com.example.sydney.recipebook;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.ListFragment;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,7 +20,7 @@ import java.util.List;
  */
 
 public class RecipeNameFragment extends ListFragment {
-
+    long mLastClickTime = 0;
     public static String[] recipeNamesArray;
     int currentPostion = -1;
     DatabaseHandler db;
@@ -41,7 +39,7 @@ public class RecipeNameFragment extends ListFragment {
     @Override
     public void onActivityCreated(Bundle savedState) {
         super.onActivityCreated(savedState);
-
+        mLastClickTime = 0;
         db =  new DatabaseHandler(getActivity());
         final List<Recipes> recipes = db.getAllRecipes();
         final List<String> recipeNames = new ArrayList<>();
@@ -112,11 +110,20 @@ public class RecipeNameFragment extends ListFragment {
     // Called when the user selects an item from the List
     @Override
     public void onListItemClick(ListView l, View v, int pos, long id) {
+        long currTime = System.currentTimeMillis();
+        if (currTime - mLastClickTime < ViewConfiguration.getDoubleTapTimeout()) {
+            onItemDoubleClick(l, v, pos, id);
+        }
+        mLastClickTime = currTime;
 
         RecipeDescriptionFragment mDescriptionsFragment = (RecipeDescriptionFragment) getFragmentManager()
                 .findFragmentById(R.id.descriptions);
         mDescriptionsFragment.showDescriptionAtIndex(pos);
         currentPostion = pos;
+    }
+    public void onItemDoubleClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Toast.makeText(getActivity(), "Double Clicked", Toast.LENGTH_SHORT).show();
+        //TODO: this will allow the user to edit the recipes they have already made
     }
 }
 
