@@ -93,6 +93,7 @@ public class RecipeNameFragment extends ListFragment {
                 }
                 Intent intent = new Intent(getActivity(), RecipeView.class);
                 startActivity(intent);
+                db.close();
                 return true;
             }
         });
@@ -102,6 +103,7 @@ public class RecipeNameFragment extends ListFragment {
             Intent intent = new Intent(getActivity(), ReadRecipe.class);
             intent.putExtra("RECIPE_POSTION", currentPostion);
             startActivity(intent);
+            db.close();
         }
         else {
             Toast.makeText(getActivity(), "Select a recipe!", Toast.LENGTH_LONG).show();

@@ -48,7 +48,7 @@ public class RecipeDescriptionFragment extends Fragment {
             recipeDescriptionsArray[i] = recipeDescription.get(i);
         }
         RecipeDescription = (TextView) getActivity().findViewById(R.id.descriptionView);
-
+        db.close();
         Button btnMake = (Button) getView().findViewById(R.id.btnMake);
         btnMake.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

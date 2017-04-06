@@ -259,7 +259,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public List<Ingredients> getRecipeIngredients(String recipeName) {
         List<Ingredients> ingredientList = new ArrayList<Ingredients>();
 
-        String selectQuery = "SELECT * FROM " + TABLE_INGREDIENTS + " WHERE " + KEY_RECIPE_NAME + " =" + recipeName;
+        String selectQuery = "SELECT * FROM " + TABLE_INGREDIENTS + " WHERE " + KEY_RECIPE_NAME + " = '" + recipeName + "'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
