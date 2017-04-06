@@ -20,4 +20,5 @@
         <activity android:name=".ReadRecipe"></activity>
     </application>
 
+
 </manifest>

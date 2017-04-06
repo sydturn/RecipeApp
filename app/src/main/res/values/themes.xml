@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <style name="RecipeTheme" parent="android:style/Theme">
+        <item name="android:textColorPrimary">#6600cc</item>
+    </style>
+</resources>

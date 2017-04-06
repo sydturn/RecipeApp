@@ -50,13 +50,15 @@ public class ReadRecipe extends AppCompatActivity {
                 TextView tv3 = new TextView(this);
 
                 tv.setText(ingredient.getIngredients());
-                tv2.setText(ingredient.getQuantity());
-                tv3.setText(step + " " + ingredient.getInstructions());
+                tv2.setText(ingredient.getQuantity() + "   ");
 
                 gl.addView(tv2);
                 gl.addView(tv);
-                ll.addView(tv3);
-                step++;
+                if(!ingredient.getInstructions().equals("")) {
+                    tv3.setText(step + ".   " + ingredient.getInstructions() + "\n");
+                    ll.addView(tv3);
+                    step++;
+                }
             }
         }
     }

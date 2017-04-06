@@ -2,9 +2,8 @@ package com.example.sydney.recipebook;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -238,10 +237,11 @@ public class AddRecipe extends AppCompatActivity {
                 stepTxt = step.getText().toString();
 
                 if(!ingredientTxt.equals("") && !ingredientTxt.equals(ingredientDefault) &&
-                        !quantityTxt.equals("") && !quantityTxt.equals(quantityDefault) &&
-                        !stepTxt.equals("") && !stepTxt.equals(stepDefault))
+                        !quantityTxt.equals("") && !quantityTxt.equals(quantityDefault))
                 {
-
+                    if(stepTxt.equals(stepDefault)) {
+                        stepTxt = "";
+                    }
                     //put stuff in a database
                     db.addIngredient(new Ingredients(ingredientTxt, quantityTxt, stepTxt, recipeNameTxt));
                     //make finished button available
@@ -259,7 +259,7 @@ public class AddRecipe extends AppCompatActivity {
                 }
                 else {
                     String x = "You need to fill out all the fields! Including: Ingredient, Quantity" +
-                            "and Step information. Your recipe must have at least one ingredient.";
+                            "and Step information(Optional). Your recipe must have at least one ingredient.";
                     formHelp.setText(x);
                 }
             }
