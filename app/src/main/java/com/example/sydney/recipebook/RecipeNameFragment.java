@@ -24,10 +24,9 @@ import java.util.List;
 public class RecipeNameFragment extends ListFragment {
 
     public static String[] recipeNamesArray;
+    int currentPostion = -1;
     DatabaseHandler db;
     Recipes currentSelection;
-    Button btnMake;
-    Button btnDelete;
     public RecipeNameFragment() {
         // Required empty public constructor
     }
@@ -46,7 +45,6 @@ public class RecipeNameFragment extends ListFragment {
         db =  new DatabaseHandler(getActivity());
         final List<Recipes> recipes = db.getAllRecipes();
         final List<String> recipeNames = new ArrayList<>();
-        btnMake = (Button) getView().findViewById(R.id.btnMake);
         for(Recipes rp : recipes) {
             recipeNames.add(rp.getName());
         }
@@ -98,15 +96,17 @@ public class RecipeNameFragment extends ListFragment {
                 return true;
             }
         });
-
- /*         btnMake.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-            }
-        });*/
-
     }
-
+    public void openRecipe() {
+        if(currentPostion != -1) {
+            Intent intent = new Intent(getActivity(), ReadRecipe.class);
+            intent.putExtra("RECIPE_POSTION", currentPostion);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(getActivity(), "Select a recipe!", Toast.LENGTH_LONG).show();
+        }
+    }
     // Called when the user selects an item from the List
     @Override
     public void onListItemClick(ListView l, View v, int pos, long id) {
@@ -114,6 +114,7 @@ public class RecipeNameFragment extends ListFragment {
         RecipeDescriptionFragment mDescriptionsFragment = (RecipeDescriptionFragment) getFragmentManager()
                 .findFragmentById(R.id.descriptions);
         mDescriptionsFragment.showDescriptionAtIndex(pos);
+        currentPostion = pos;
     }
 }
 
