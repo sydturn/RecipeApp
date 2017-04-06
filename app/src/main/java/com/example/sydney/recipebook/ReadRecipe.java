@@ -3,7 +3,6 @@ package com.example.sydney.recipebook;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Button;
@@ -45,17 +44,17 @@ public class ReadRecipe extends AppCompatActivity {
             List<Ingredients> recipeIngredients = db.getRecipeIngredients(currentRecipe.getName());
 
             GridLayout gl = (GridLayout) findViewById(R.id.gridLayout);
-
-            TextView ingOne = (TextView) findViewById(R.id.txtIngOne);
+            gl.setRowCount(recipeIngredients.size() + 3);
+/*            TextView ingOne = (TextView) findViewById(R.id.txtIngOne);
             TextView quanOne = (TextView) findViewById(R.id.txtQuantOne);
-            TextView stepOne = (TextView) findViewById(R.id.txtStepOne);
+            TextView stepOne = (TextView) findViewById(R.id.txtStepOne);*/
 
-            int row = 5;
+            int row = 0;
             int step = 1;
             for(Ingredients ingredient : recipeIngredients) {
-                ingOne.setText(ingredient.getIngredients());
+/*                ingOne.setText(ingredient.getIngredients());
                 quanOne.setText(ingredient.getQuantity());
-                stepOne.setText(ingredient.getInstructions());
+                stepOne.setText(ingredient.getInstructions());*/
 
                 TextView tv = new TextView(this);
                 TextView tv2 = new TextView(this);
@@ -64,11 +63,11 @@ public class ReadRecipe extends AppCompatActivity {
                 tv2.setText(ingredient.getQuantity());
                 Log.d(":INGREDIENT: ", ingredient.getIngredients());
 
-                GridLayoutManager.LayoutParams params1 = new GridLayoutManager.LayoutParams(row++, 0);
-                GridLayoutManager.LayoutParams params2 = new GridLayoutManager.LayoutParams(row++, 1);
-
-                gl.addView(tv, params1);
-                gl.addView(tv2, params2);
+  /*              GridLayoutManager.LayoutParams params1 = new GridLayoutManager.LayoutParams(row++, 0);
+                GridLayoutManager.LayoutParams params2 = new GridLayoutManager.LayoutParams(row++, 1);*/
+             //   GridLayout.LayoutParams params = new GridLayout.LayoutParams(GridLayout.spec())
+                gl.addView(tv);
+                gl.addView(tv2);
                 step++;
             }
         }

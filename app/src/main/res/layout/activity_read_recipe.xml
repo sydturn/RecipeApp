@@ -44,7 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="2"
-            android:rowCount="10"
             tools:layout_margin="5dp"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp">
@@ -66,12 +65,20 @@
                 android:text="Servings" />
 
             <TextView
-                android:id="@+id/Instructions"
+                android:id="@+id/Ingredients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_row="2"
                 android:text="Ingredients:" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="2"
+                android:text="TextView" />
 
             <TextView
                 android:id="@+id/txtCookTime"
@@ -89,19 +96,6 @@
                 android:layout_row="1"
                 android:text="0" />
 
-            <TextView
-                android:id="@+id/txtIngOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="3"
-                android:text="Ingredient1" />
-
-            <TextView
-                android:id="@+id/txtQuantOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="quantity1" />
         </GridLayout>
 
         <LinearLayout
@@ -112,17 +106,18 @@
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp">
 
-            <TextView
-                android:id="@+id/Steps"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Steps:" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtStepOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                <TextView
+                    android:id="@+id/Steps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Steps:" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
