@@ -148,9 +148,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.delete(TABLE_RECIPES, KEY_ID + " = ? ", new String[] {
                 String.valueOf(recipe.getId())
         });
-//        db.delete(TABLE_INGREDIENTS, KEY_RECIPE_NAME + " = ? ", new String[] {
-//                recipe.getName()
-//        });
+        db.delete(TABLE_INGREDIENTS, KEY_RECIPE_NAME + " = ? ", new String[] {
+                recipe.getName()
+        });
         db.close();
     }
     //empty table of recipes

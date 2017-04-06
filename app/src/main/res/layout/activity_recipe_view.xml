@@ -14,7 +14,8 @@
         android:name="com.example.sydney.recipebook.RecipeNameFragment"
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
+
 
     <fragment
         android:id="@+id/descriptions"
